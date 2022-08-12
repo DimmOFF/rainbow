@@ -364,8 +364,6 @@ export default function ExchangeModal({
     insufficientLiquidity,
   } = useSwapDerivedOutputs(Number(chainId), type);
 
-  console.log(tradeDetails);
-
   const lastTradeDetails = usePrevious(tradeDetails);
   const isSufficientBalance = useSwapIsSufficientBalance(inputAmount);
 
@@ -621,8 +619,7 @@ export default function ExchangeModal({
           type,
         });
         // Tell iOS we finished running a rap (for tracking purposes)
-        NotificationManager &&
-          NotificationManager.postNotification('rapCompleted');
+        NotificationManager?.postNotification('rapCompleted');
         return true;
       } catch (error) {
         setIsAuthorizing(false);
@@ -660,8 +657,7 @@ export default function ExchangeModal({
     let NotificationManager = ios ? NativeModules.NotificationManager : null;
     try {
       // Tell iOS we're running a rap (for tracking purposes)
-      NotificationManager &&
-        NotificationManager.postNotification('rapInProgress');
+      NotificationManager?.postNotification('rapInProgress');
       if (nativeCurrency === 'usd') {
         amountInUSD = nativeAmount;
       } else {
