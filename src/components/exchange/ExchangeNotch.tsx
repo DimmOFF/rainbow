@@ -1,6 +1,5 @@
 import React from 'react';
 import FastImage from 'react-native-fast-image';
-import { useTheme } from '../../theme/ThemeContext';
 import ExchangeNotchLeft from '@rainbow-me/assets/exchangeNotchLeft.png';
 import ExchangeNotchLeftDark from '@rainbow-me/assets/exchangeNotchLeftDark.png';
 import ExchangeNotchMiddle from '@rainbow-me/assets/exchangeNotchMiddle.png';
@@ -10,6 +9,7 @@ import ExchangeNotchRightDark from '@rainbow-me/assets/exchangeNotchRightDark.pn
 import { Box } from '@rainbow-me/design-system';
 import { useDimensions } from '@rainbow-me/hooks';
 import styled from '@rainbow-me/styled-components';
+import { useTheme } from '@rainbow-me/theme';
 
 const notchHeight = 48;
 const notchSideWidth = 78;
