@@ -440,10 +440,6 @@ export default function ExchangeModal({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleCustomGasBlur = useCallback(() => {
-    ((lastFocusedInputHandle as unknown) as MutableRefObject<TextInput>)?.current?.focus();
-  }, [lastFocusedInputHandle]);
-
   const updateGasLimit = useCallback(async () => {
     try {
       const swapParams = {
@@ -1016,14 +1012,13 @@ export default function ExchangeModal({
               )}
             </Row>
             <Row height="content">
+              {/* @ts-expect-error - Javascript Component */}
               <GasSpeedButton
                 asset={outputCurrency}
                 currentNetwork={currentNetwork}
-                dontBlur
                 flashbotTransaction={flashbots}
                 marginBottom={0}
                 marginTop={0}
-                onCustomGasBlur={handleCustomGasBlur}
                 testID={`${testID}-gas`}
               />
             </Row>
