@@ -962,7 +962,6 @@ export default function ExchangeModal({
                 priceImpactColor={priceImpactColor}
                 priceImpactNativeAmount={priceImpactNativeAmount}
                 priceImpactPercentDisplay={priceImpactPercentDisplay}
-                testID="deposit-info-button"
               />
             )}
             {!isSavings && showConfirmButton && (
